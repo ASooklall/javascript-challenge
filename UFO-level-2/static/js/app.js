@@ -16,20 +16,20 @@ var tbody = d3.select("tbody");
 ///////////////////////////
 
 function handleSubmit() {
-    // Prevent the page from refreshing
-    d3.event.preventDefault();
-  
-    // Select the new input values from the form
-    var inputValue = d3.select("#datetime").property("value");
-    var inputCity = d3.select("#cities").property("value");
-    var inputState = d3.select("#states").property("value");
-    var inputCountry = d3.select("#countries").property("value");
-    var inputShape = d3.select("#shapes").property("value");
-  
-    // clear the table to prepare for new data filter
-    tbody.html("")
+  // Prevent the page from refreshing
+  d3.event.preventDefault();
 
-    // Begin filters 
+  // Select the new input values from the form
+  var inputValue = d3.select("#datetime").property("value");
+  var inputCity = d3.select("#cities").property("value");
+  var inputState = d3.select("#states").property("value");
+  var inputCountry = d3.select("#countries").property("value");
+  var inputShape = d3.select("#shapes").property("value");
+
+  // clear the table to prepare for new data filter
+  tbody.html("")
+
+  // Begin filters 
     // filters by each input which may or may not have values
 
     // filter check based on date
@@ -70,19 +70,19 @@ function handleSubmit() {
     };
 
 
-    // append html to table after search filters
-    filteredShape.forEach((ufoSighting) => {
-        var row = tbody.append("tr");
-        Object.entries(ufoSighting).forEach(([key, value]) => {
-          var cell = row.append("td");
-          cell.text(value);
-        })
-      });
+  // append html to table after search filters
+  filteredShape.forEach((ufoSighting) => {
+      var row = tbody.append("tr");
+      Object.entries(ufoSighting).forEach(([key, value]) => {
+        var cell = row.append("td");
+        cell.text(value);
+      })
+  });
       
 
 
   // clear search input
-  d3.select(".form-control").html("");
+  d3.selectAll("#datetime").html("");
 };
     
 ///////////////////////////
@@ -90,7 +90,7 @@ function handleSubmit() {
 ///////////////////////////
 
 d3.select("#filter-btn").on("click", handleSubmit);
-d3.select("form").on("submit", handleSubmit);
+d3.selectAll("form").on("submit", handleSubmit);
 
 
 ////////////////////////////////////////////////////////////////////////////////////
