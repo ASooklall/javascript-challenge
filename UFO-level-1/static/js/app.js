@@ -26,32 +26,34 @@ function handleSubmit() {
     tbody.html("")
 
     // if there is a value being searched:
-if (inputValue){
+    if (inputValue){
     // filter the data based on the search
-    var filteredData = tableData.filter(data => data.datetime === inputValue)
+        var filteredData = tableData.filter(data => data.datetime === inputValue)
 
     // append html table with each listing
-    filteredData.forEach((ufoSighting) => {
-        var row = tbody.append("tr");
-        Object.entries(ufoSighting).forEach(([key, value]) => {
-          var cell = row.append("td");
-          cell.text(value);
+        filteredData.forEach((ufoSighting) => {
+            var row = tbody.append("tr");
+            Object.entries(ufoSighting).forEach(([key, value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+            });
         });
-      });
-}
+    }
 
     // if there isn't a value being searched, list all known values:
-else {
-  var filteredData = tableData.filter(data => data.datetime)
-  filteredData.forEach((ufoSighting) => {
-    var row = tbody.append("tr");
-    Object.entries(ufoSighting).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-    });
-  });
-}
+    else {
+        var filteredData = tableData.filter(data => data.datetime)
+        filteredData.forEach((ufoSighting) => {
+            var row = tbody.append("tr");
+            Object.entries(ufoSighting).forEach(([key, value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+            });
+        });
+    };
 
+  // clear search input
+  d3.select(".form-control").html("");
 };
     
 ///////////////////////////
