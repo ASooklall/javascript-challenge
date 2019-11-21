@@ -94,7 +94,7 @@ function handleSubmit() {
 ///////////////////////////
 
 d3.select("#filter-btn").on("click", handleSubmit);
-d3.select("form").node().on("submit", handleSubmit);
+d3.select("form").on("submit", handleSubmit);
 
 
 ////////////////////////////////////////////////////////////////////////////////////
