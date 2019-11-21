@@ -53,7 +53,7 @@ function handleSubmit() {
     };
 
   // clear search input
-  d3.select(".form-control").html("");
+  d3.select(".form-control").node().value = "";
 };
     
 ///////////////////////////

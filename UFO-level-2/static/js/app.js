@@ -81,8 +81,12 @@ function handleSubmit() {
       
 
 
-  // clear search input
-  d3.selectAll("#datetime").html("");
+  // clear search inputs
+  d3.select("#datetime").node().value = "";
+  d3.select("#cities").node().value = "";
+  d3.select("#states").node().value = "";
+  d3.select("#countries").node().value = "";
+  d3.select("#shapes").node().value = "";
 };
     
 ///////////////////////////
@@ -90,7 +94,7 @@ function handleSubmit() {
 ///////////////////////////
 
 d3.select("#filter-btn").on("click", handleSubmit);
-d3.selectAll("form").on("submit", handleSubmit);
+d3.select("form").node().on("submit", handleSubmit);
 
 
 ////////////////////////////////////////////////////////////////////////////////////
