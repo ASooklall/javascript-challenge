@@ -21,10 +21,10 @@ function handleSubmit() {
 
   // Select the new input values from the form
   var inputValue = d3.select("#datetime").property("value");
-  var inputCity = d3.select("#cities").property("value");
-  var inputState = d3.select("#states").property("value");
-  var inputCountry = d3.select("#countries").property("value");
-  var inputShape = d3.select("#shapes").property("value");
+  var inputCity = d3.select("#cities").property("value").toLowerCase();
+  var inputState = d3.select("#states").property("value").toLowerCase();
+  var inputCountry = d3.select("#countries").property("value").toLowerCase();
+  var inputShape = d3.select("#shapes").property("value").toLowerCase();
 
   // clear the table to prepare for new data filter
   tbody.html("")
